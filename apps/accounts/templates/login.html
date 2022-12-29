@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <section class="login-page-wrap padding-top-80 padding-bottom-50">
+        <div class="container">
+            <div class="row gutters-60">
+                <div class="col-lg-8">
+                    <div class="login-box-layout1">
+                        <div class="section-heading heading-dark">
+                            <h2 class="item-heading">LOGIN FORM</h2>
+                        </div>
+                        <form class="login-form" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="mb-3">{{form.email.label}}</label>
+                                    {{form.email}}
+                                    <!-- <input class="main-input-box" type="text" placeholder="" /> -->
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="mb-3">{{ form.password.label }}</label>
+                                    {{form.password}}
+                                    <!-- <input class="main-input-box" type="password" placeholder="" /> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+    
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="lost-password"><a href="#">Забыли пароль?</a></label>
+                                </div>
+                            </div>
+                            <div class="btn-area">
+                                <button class="btn-fill btn-primary" type="submit" value="Login">
+                                    Войти<i class="flaticon-next"></i>
+                                </button>
+                               
+                            </div>
+                        </form>
+                        <label>Or Connect With Social Networks</label>
+                        <div class="login-box-social">
+                            <ul>
+                                <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
+                    <div class="widget">
+                        <div class="section-heading heading-dark">
+                            <h3 class="item-heading">ABOUT ME</h3>
+                        </div>
+                        <div class="widget-about">
+                            <figure class="author-figure"><img src="img/figure/about.jpg" alt="about"></figure>
+                            <figure class="author-signature"><img src="img/figure/signature.png" alt="about"></figure>
+                            <p>Fusce mauris auctor ollicituder teary iner hendrerit risusey aeenean rauctor pibus
+                                doloer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <section class="inner-page-banner bg-common" data-bg-image="img/figure/inner-page-banner1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-area">
+                        <h1>List Blog Page</h1>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Inne Page Banner Area End Here -->
+    <!-- Blog List Area Start Here -->
+    <section class="blog-list-page-wrap padding-top-80 padding-bottom-50">
+        <div class="container">
+            <div class="row gutters-60">
+                <div class="col-lg-8">
+                {% for post in object_list %}
+                    <div class="blog-box-layout1">
+                        <div class="item-figure">
+                            <a href="{% url 'post_detail' post.id %}">
+                                <img src="{{ post.image.url }}" alt="Blog">
+                            </a>
+                        </div>
+                        <div class="item-content">
+                            <ul class="entry-meta">
+                                <li><a href="#"><i class="fas fa-clock"></i>{{ post.created}}</a></li>
+                                <li><a href="#"><i class="fas fa-user"></i>by <span>{{ post.author.username }}</span></a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
+                                <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
+                            </ul>
+                            <h3 class="item-title"><a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a></h3>
+                            <p>{{ post.description }}</p>
+                            <a href="{% url 'post_detail' post.pk %}" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                    <ul class="pagination-layout1">
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                    </ul>
+                </div>
+                {% include "includes/left_side_bar.html" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

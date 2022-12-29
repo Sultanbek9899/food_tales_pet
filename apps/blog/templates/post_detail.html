@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <section class="single-blog-page-wrap padding-top-80 padding-bottom-50">
+        <div class="container">
+            <div class="row gutters-60">
+                <div class="col-lg-8">
+                    <div class="single-blog-box">
+                        <div class="main-figure">
+                            <a href="single-blog.html"><img src="{{object.image.url}}" alt="Blog"></a>
+                        </div>
+                        <div class="blog-content">
+                            <ul class="entry-meta">
+                                <li><a href="#"><i class="fas fa-clock"></i>{{object.created}}</a></li>
+                                <li><a href="#"><i class="fas fa-user"></i>by <span>{{object.author.username}}</span></a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
+                                <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
+                            </ul>
+                            <h3 class="item-title">{{object.title }}</h3>
+                            <p class="item-details">{{object.description}}</p>
+                        </div>
+                        <div class="tag-share">
+                            <ul>
+                                <li>
+                                    <ul class="inner-tag">
+                                    
+                                        {% for tag in object.tags.all %}
+                                        <li>
+                                            <a href="#">{{tag.name}}</a>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="inner-share">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-google-plus-g"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-pinterest"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="recipe-author">
+                            <div class="media media-none--xs">
+                                <img src="img/blog/author9.jpg" alt="Blog Author" class="rounded-circle media-img-auto">
+                                <div class="media-body">
+                                    <h4 class="author-title">Michel Jack</h4>
+                                    <h5 class="author-sub-title">Written by</h5>
+                                    <p>I love cooking and blogging. Using a fork, break salmon. Halve reserved
+                                        potatoes and eggs crosswise. The of something of did require met of
+                                        help have someone.</p>
+                                    <ul class="author-social">
+                                        <li>
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-skype"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="next-prev-post">
+                            <div class="prev-post">
+                                <a href="#" class="item-figure"><img src="img/blog/prev-post.jpg" alt="Post"></a>
+                                <div class="item-content">
+                                    <p>PREVIOUS POST</p>
+                                    <h3 class="post-title"><a href="#">Old school pancake next area so goody</a></h3>
+                                </div>
+                            </div>
+                            <div class="next-post">
+                                <div class="item-content">
+                                    <p>NEXT POST</p>
+                                    <h3 class="post-title"><a href="#">Old school pancake next area so goody</a></h3>
+                                </div>
+                                <a href="#" class="item-figure"><img src="img/blog/next-post.jpg" alt="Post"></a>
+                            </div>
+                        </div>
+                        <div class="recipe-reviews">
+                            <div class="section-heading3 heading-dark">
+                                <h2 class="item-heading">RECIPE REVIEWS</h2>
+                            </div>
+                            <ul>
+                                <li class="reviews-single-item">
+                                    <div class="media media-none--xs">
+                                        <img src="img/blog/comment1.jpg" alt="Comment" class="media-img-auto">
+                                        <div class="media-body">
+                                            <h4 class="comment-title">Liza Zaman</h4>
+                                            <span class="post-date">September 27, 2018</span>
+                                            <p>Absolutely great recipe. I cooked it for my kids and they loved it,
+                                                even
+                                                asked for more, can you believe it?</p>
+                                            <ul class="item-rating">
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-empty"><i class="fas fa-star"></i></li>
+                                                <li class="single-item"><span>9<span> / 10</span></span> </li>
+                                            </ul>
+                                            <a href="#" class="item-btn">REPLY<i class="fas fa-long-arrow-alt-right"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reviews-single-item">
+                                    <div class="media media-none--xs">
+                                        <img src="img/blog/comment2.jpg" alt="Comment" class="media-img-auto">
+                                        <div class="media-body">
+                                            <h4 class="comment-title">John Martin</h4>
+                                            <span class="post-date">September 12, 2018</span>
+                                            <p>Absolutely great recipe. I cooked it for my kids and they loved it,
+                                                even
+                                                asked for more, can you believe it?</p>
+                                            <ul class="item-rating">
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-fill"><i class="fas fa-star"></i></li>
+                                                <li class="single-item star-empty"><i class="fas fa-star"></i></li>
+                                                <li class="single-item"><span>7<span> / 10</span></span> </li>
+                                            </ul>
+                                            <a href="#" class="item-btn">REPLY<i class="fas fa-long-arrow-alt-right"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="leave-review">
+                            <div class="section-heading3 heading-dark">
+                                <h2 class="item-heading">LEAVE A REVIEW</h2>
+                            </div>
+                            <form class="leave-form-box">
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label>Comment :</label>
+                                        <textarea placeholder="" class="textarea form-control" name="message" rows="7"
+                                            cols="20" data-error="Message field is required" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>Name :</label>
+                                        <input type="text" placeholder="" class="form-control" name="name"
+                                            data-error="Name field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>E-mail :</label>
+                                        <input type="email" placeholder="" class="form-control" name="email"
+                                            data-error="E-mail field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>Website :</label>
+                                        <input type="email" placeholder="" class="form-control" name="email"
+                                            data-error="E-mail field is required" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-12 form-group mb-0">
+                                        <button type="submit" class="item-btn">POST REVIEW</button>
+                                    </div>
+                                </div>
+                                <div class="form-response"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% include 'includes/left_side_bar.html' %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

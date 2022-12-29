@@ -1,0 +1,14 @@
+{% autoescape off %}
+
+
+<div style="max-width: 600px; margin: 0 auto;">
+    <div style="background-color: #f4f4f4; padding: 30px;">
+      <h1 style="text-align: center;">Подтверждение аккаунта</h1>
+      <p style="text-align: center; font-size: 16px;">Здравствуйте,{{user.first_name}}! Пожалуйста, подтвердите свой аккаунт, чтобы начать использовать наш сервис.</p>
+      <div style="text-align: center;">
+        <a href="http://{{domain}}{% url 'account_activate' uidb64=uid token=token %}" style="background-color: #4caf50; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;">Подтвердить аккаунт</a>
+      </div>
+    </div>
+</div>
+
+{% endautoescape %}

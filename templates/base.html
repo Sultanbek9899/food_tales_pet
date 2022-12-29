@@ -1,0 +1,429 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+    {% load static %}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ranna | Home 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <!-- Normalize Css -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- Main Css -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'fonts/flaticon.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Modernizr Js -->
+    <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- Preloader Start Here -->
+    <!-- <div id="preloader"></div> -->
+    <!-- Preloader End Here -->
+    <!-- ScrollUp Start Here -->
+    <a href="#wrapper" data-type="section-switch" class="scrollup">
+        <i class="fas fa-angle-double-up"></i>
+    </a>
+    <!-- ScrollUp End Here -->
+    <div id="wrapper" class="wrapper">
+        <!-- Header Area Start Here -->
+        <header class="header-one">
+            <div id="header-main-menu" class="header-main-menu header-sticky">
+                <div class="container">                    
+                    <div class="row">
+                        <div class="col-lg-8 col-md-3 col-sm-4 col-4 possition-static">
+                            <div class="site-logo-mobile">
+                                <a href="index.html" class="sticky-logo-light">
+                                    <img src="static/img/dark.png" alt="Site Logo1  "></a>
+                                <a href="index.html" class="sticky-logo-dark">
+                                    <img src="static/img/dark.png" alt="Site Logo1"></a>
+                            </div>
+                            <nav class="site-nav">
+                                <ul id="site-menu" class="site-menu">
+                                    <li><a href="{% url 'index' %}">Главная</a></li>
+                                    <li>
+                                        <a href="{% url 'category_list' %}">Категории</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Рецепты</a>
+                                    </li>
+                                 
+                                 
+                                    <li><a href="{% url 'post_list' %}">Блог</a>
+                                      
+                                    </li>
+                                    <li><a href="#">Магазин</a>
+                                        <ul class="dropdown-menu-col-1">
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="single-shop.html">Shop Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Контакты</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-8 col-8 d-flex align-items-center justify-content-end">
+                            <div class="nav-action-elements-layout1">
+                                <ul>
+                                    <li>
+                                        <div class="cart-wrap cart-on-mobile d-lg-none">                                            
+                                            <div class="cart-info">
+                                                <i class="flaticon-shopping-bag"></i>
+                                                <div class="cart-amount"><span class="item-currency">$</span>00</div>     
+                                            </div>                                   
+                                            <div class="cart-items">
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="{% static '/img/product/top-product1.jpg' %}" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Pressure</a>
+                                                        <span>Code: STPT601</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 1</div>
+                                                    <div class="cart-price">$249</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/top-product2.jpg" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Stethoscope</a>
+                                                        <span>Code: STPT602</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 1</div>
+                                                    <div class="cart-price">$189</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/top-product3.jpg" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Microscope</a>
+                                                        <span>Code: STPT603</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 2</div>
+                                                    <div class="cart-price">$379</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-btn">
+                                                        <a href="#" class="item-btn">View Cart</a>
+                                                        <a href="#" class="item-btn">Checkout</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% if request.user.is_authenticated %}
+                                    <li>
+                                        <p style="color:white;">Привет, {{request.user.email }}</p>
+                                        <a href="{% url 'logout' %}">
+                                            <button type="button" class="login-btn">
+                                                Выйти
+                                            </button>
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a href="{% url 'login' %}">
+                                        <button type="button" class="login-btn">
+                                            <i class="flaticon-profile"></i>Логин
+                                        </button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'register' %}">
+                                            <button type="button" class="login-btn">
+                                            Регистрация
+                                            </button>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    <li>
+                                        <a href="submit-recipe.html" class="fill-btn"><i class="flaticon-plus-1"></i>SUBMIT
+                                            RECIPE</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mob-menu-open toggle-menu">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom d-none d-lg-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="nav-action-elements-layout2">
+                                <ul class="nav-social">
+                                    <li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" title="twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" title="pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+                                    <li><a href="#" title="skype"><i class="fab fa-skype"></i></a></li>
+                                    <li><a href="#" title="rss"><i class="fas fa-rss"></i></a></li>
+                                    <li><a href="#" title="google-plus"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="site-logo-desktop">
+                                <a href="index.html" class="main-logo"><img src="static/img/logo-dark.png" alt="Site Logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="nav-action-elements-layout3">
+                                <ul>
+                                    <li>
+                                        <div class="header-search-box">
+                                            <a href="#search" title="Search" class="search-button">
+                                                <i class="flaticon-search"></i>
+                                            </a> 
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cart-wrap d-none d-lg-block">                                            
+                                            <div class="cart-info">
+                                                <i class="flaticon-shopping-bag"></i>
+                                                <div class="cart-amount"><span class="item-currency">$</span>00</div>     
+                                            </div>                                   
+                                            <div class="cart-items">
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/top-product1.jpg" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Pressure</a>
+                                                        <span>Code: STPT601</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 1</div>
+                                                    <div class="cart-price">$249</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/top-product2.jpg" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Stethoscope</a>
+                                                        <span>Code: STPT602</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 1</div>
+                                                    <div class="cart-price">$189</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/top-product3.jpg" alt="product" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-title">
+                                                        <a href="#">Microscope</a>
+                                                        <span>Code: STPT603</span>
+                                                    </div>
+                                                    <div class="cart-quantity">X 2</div>
+                                                    <div class="cart-price">$379</div>
+                                                    <div class="cart-trash">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item">
+                                                    <div class="cart-btn">
+                                                        <a href="#" class="item-btn">View Cart</a>
+                                                        <a href="#" class="item-btn">Checkout</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+
+
+        {% endblock %}
+        
+        <section class="instagram-feed-wrap">
+            <div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
+            <ul class="instagram-feed-figure">
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure1.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure2.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure3.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure4.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure5.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure6.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure7.jpg" alt="Social"></a>
+                </li>
+                <li>
+                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure8.jpg" alt="Social"></a>
+                </li>
+            </ul>
+        </section>
+        <!-- Instagram End Here -->
+        <!-- Footer Area Start Here -->
+        <footer class="ranna-bg-dark">
+            <div class="container">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="{% static 'img/logo-light.png' %}" class="img-fluid" alt="footer-logo"></a>
+                </div>
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">FACEBOOK</a></li>
+                        <li><a href="#">TWITTER</a></li>
+                        <li><a href="#">INSTAGRAM</a></li>
+                        <li><a href="#">PINTEREST</a></li>
+                        <li><a href="#">GOOGLEPLUS</a></li>
+                        <li><a href="#">YOUTUBE</a></li>
+                    </ul>
+                </div>
+                <div class="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <div id="search" class="search-wrap">
+        <button type="button" class="close">×</button>
+        <form class="search-form">
+            <input type="search" id="ooooo" value="" placeholder="Type here........" />
+            <button type="submit" class="search-btn"><i class="flaticon-search"></i></button>
+        </form>
+    </div>
+    <!-- Search Box End Here -->
+    <!-- Modal Start-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="title-default-bold mb-none">Login</div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="login-form">
+                        <input class="main-input-box" type="text" placeholder="User Name" />
+                        <input class="main-input-box" type="password" placeholder="Password" />
+                        <div class="inline-box mb-5 mt-4">
+                            <div class="checkbox checkbox-primary">
+                                <input id="modal-checkbox" type="checkbox">
+                                <label for="modal-checkbox">Remember Me</label>
+                            </div>
+                            <label class="lost-password"><a href="#">Lost your password?</a></label>
+                        </div>
+                        <div class="inline-box mb-5 mt-4">
+                            <button class="btn-fill" type="submit" value="Login">Login</button>
+                            <a href="#" class="btn-register"><i class="fas fa-user"></i>Register Here!</a>
+                        </div>
+                    </form>
+                    <label>Login connect with your Social Network</label>
+                    <div class="login-box-social">
+                        <ul>
+                            <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End-->
+    <!-- Jquery Js -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Bootstrap Js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap Js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins Js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Owl Carousel Js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- Smoothscroll Js -->
+    <script src="{% static 'js/smoothscroll.min.js' %}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+</html>
