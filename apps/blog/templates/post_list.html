@@ -40,7 +40,7 @@
                                 <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
                             </ul>
                             <h3 class="item-title"><a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a></h3>
-                            <p>{{ post.description }}</p>
+                            <p>{{ post.description|safe }}</p>
                             <a href="{% url 'post_detail' post.pk %}" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
                         </div>
                     </div>

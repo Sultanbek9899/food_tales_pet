@@ -17,4 +17,7 @@ def send_activation_email(user, request, to_email):
     }
     message = render_to_string("email_template/register_confirm_email.html",data)
     email = EmailMessage(email_subject, message, to=[to_email])
-    print(email)
+    email.content_subtype = "html"
+    print(email.message())
+    email.send(fail_silently=True)
+    

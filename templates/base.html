@@ -158,12 +158,19 @@
                                     </li>
                                     {% if request.user.is_authenticated %}
                                     <li>
-                                        <p style="color:white;">Привет, {{request.user.email }}</p>
-                                        <a href="{% url 'logout' %}">
+                                        <div class="dropdown">
+                                        <a style="color:white;" class="dropdown-toggle" data-toggle="dropdown">{{request.user.email }}</a>
+                                        <!-- <a href="{% url 'logout' %}">
                                             <button type="button" class="login-btn">
                                                 Выйти
                                             </button>
-                                        </a>
+                                        </a> -->
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'author_posts' %}">Мои посты</a>
+                                            <a class="dropdown-item" href="#">Профиль</a>
+                                            <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+                                          </div>
+                                        </div>
                                     </li>
                                     {% else %}
                                     <li>
@@ -182,8 +189,9 @@
                                     </li>
                                     {% endif %}
                                     <li>
-                                        <a href="submit-recipe.html" class="fill-btn"><i class="flaticon-plus-1"></i>SUBMIT
-                                            RECIPE</a>
+                                        <a href="{% url 'post_create' %}" class="fill-btn">
+                                        <i class="flaticon-plus-1"></i>
+                                        Создать пост</a>
                                     </li>
                                 </ul>
                             </div>
@@ -215,7 +223,9 @@
                         </div>
                         <div class="col-lg-4 d-none d-lg-block">
                             <div class="site-logo-desktop">
-                                <a href="index.html" class="main-logo"><img src="static/img/logo-dark.png" alt="Site Logo"></a>
+                                <a href="{% url 'index' %}" class="main-logo">
+                                    <img src="{% static 'img/logo-dark.png' %}" alt="Site Logo">
+                                </a>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -314,28 +324,28 @@
             <div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
             <ul class="instagram-feed-figure">
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure1.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure1.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure2.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure2.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure3.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure3.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure4.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure4.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure5.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure5.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure6.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure6.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure7.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure7.jpg' %}" alt="Social"></a>
                 </li>
                 <li>
-                    <a href="single-recipe1.html"><img src="static/img/social-figure/social-figure8.jpg" alt="Social"></a>
+                    <a href="single-recipe1.html"><img src="{% static 'img/social-figure/social-figure8.jpg' %}" alt="Social"></a>
                 </li>
             </ul>
         </section>
@@ -423,6 +433,8 @@
     <script src="{% static 'js/smoothscroll.min.js' %}"></script>
     <!-- Custom Js -->
     <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 </body>
 
 
