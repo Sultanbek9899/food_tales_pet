@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="single-shop-page-wrap padding-top-80 padding-bottom-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-12">
+                <div class="single-shop-figure-view">
+                    <div class="row">
+                        <div class="col-lg-9 col-12 order-lg-2">
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show" id="related0">
+                                    <a href="#">
+                                        <img src="{{ object.main_image.url }}" data-zoom-image="{{object.main_image.url}}">
+                                    </a>
+                                </div>
+                                {% for p_image in object.images.all %}
+                                <div class="tab-pane fade" id="related{{p_image.id}}">
+                                    <a href="#">
+                                        <img alt="single" src="{{p_image.image.url }}" data-zoom-image="{{p_image.image.url}}">
+                                    </a>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-12 order-lg-1">
+                            <ul class="nav tab-nav tab-nav-list">
+    
+                                {% for p_image in object.images.all %}
+                                <li class="nav-item">
+                                    <a class="" href="#related{{p_image.id}}" data-toggle="tab" aria-expanded="false">
+                                        <img alt="related1" src="{{p_image.image.url}}" class="img-fluid"></a>
+                                </li>
+                                {% endfor %}
+                           
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12">
+                <div class="single-shop-content">
+                    <h2 class="item-title">{{ object.name }}</h2>
+                    <ul class="item-rate">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><a href="#">( 01 Reviews )</a></li>
+                    </ul>
+                    <div class="item-price">{{object.price}} сом</div>
+                    <ul class="entry-meta">
+                        <li>Артикул: <span>{{object.id}}</span></li>
+                        <li>Наличие: <span> В наличии </span></li>
+                        <li>Категория: <a href="#">{{object.category.name}}</a></li>
+                    </ul>
+                    <ul class="item-social">
+                        <li>Share With:</li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                    <ul class="action-area1">
+                        <li id="quantity-holder">
+                            <div class="input-group quantity-holder">
+                                <input type="text" name='quantity' class="form-control quantity-input" value="1" placeholder="1">
+                                <div class="input-group-btn">
+                                    <button class="quantity-btn quantity-plus" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                    <button class="quantity-btn quantity-minus" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cart-btn">ADD TO CART</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="single-shop-description">
+                    <ul class="nav nav-tabs tab-nav-list">
+                        <li class="nav-item">
+                            <a class="active" href="#description" data-toggle="tab" aria-expanded="false">Описание</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#reviews" data-toggle="tab" aria-expanded="false">Отзывы</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="description">
+                            {{ object.description }}
+                        </div>
+                        <div class="tab-pane fade" id="reviews">
+                            Gimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged mply dummy text of the printing and typesetting industry. Gimply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the when an unknown printer took.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="related-product">
+            <div class="section-heading heading-dark">
+                <h2 class="item-heading">REALATED PRODUCTS</h2>
+            </div>
+            <div class="rc-carousel dot-control-layout1" data-loop="true" data-items="9" data-margin="30"
+                data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="700" data-dots="true"
+                data-nav="false" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
+                data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true"
+                data-r-small="2" data-r-small-nav="false" data-r-small-dots="true" data-r-medium="3"
+                data-r-medium-nav="false" data-r-medium-dots="true" data-r-large="4" data-r-large-nav="false"
+                data-r-large-dots="true" data-r-extra-large="4" data-r-extra-large-nav="false"
+                data-r-extra-large-dots="true">
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure1.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure2.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure3.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure4.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure5.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure6.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure7.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure8.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+                <div class="shop-box-layout1">
+                    <div class="mask-item bg--accent">
+                        <div class="item-figure">
+                            <img src="img/product/shop-figure9.png" alt="Product">
+                        </div>
+                        <ul class="action-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
+                        <div class="item-price"><span class="currency">$</span>28.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

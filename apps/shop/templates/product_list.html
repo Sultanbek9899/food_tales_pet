@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="shop-page-wrap padding-top-74 padding-bottom-50">
+    <div class="container">
+        <div class="row gutters-60">
+            <div class="col-lg-8">
+                <div class="d-sm-flex justify-content-between align-items-center">
+                    <div class="section-heading heading-dark">
+                        <h2 class="item-heading">SHOWING 16-24 OF 50 RESULTS</h2>
+                    </div>
+                    <div class="filter-box">
+                        <select class="select2" name="filter-by">
+                            <option value="0">Breakfast</option>
+                            <option value="1">Newest</option>
+                            <option value="2">Top Sell</option>
+                            <option value="3">Top Rated</option>
+                            <option value="4">Price High</option>
+                            <option value="5">Low Price</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+
+                    {% for product in object_list %}
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="shop-box-layout1">
+                            <div class="mask-item bg--accent">
+                                <div class="item-figure">
+                                    <img src="{{ product.main_image.url }}" alt="Product">
+                                </div>
+                                <ul class="action-items">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-heart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title"><a href="{% url 'product_detail' product.id %}">{{product.name }}</a></h3>
+                                <div class="item-price">{{product.price}}<span class="currency">сом</span></div>
+                            </div>
+                        </div>
+                    </div>
+                   {% endfor %}
+                </div>
+                <ul class="pagination-layout1">
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
+                <div class="widget">
+                    <div class="section-heading heading-dark">
+                        <h3 class="item-heading">CATEGORIES</h3>
+                    </div>
+                    <div class=" widget-search">
+                        <div class="input-group stylish-input-group">
+                            <input type="text" class="form-control" placeholder="Search product . . .">
+                            <span class="input-group-addon">
+                                <button type="submit">
+                                    <span class="flaticon-magnifying-glass" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="section-heading heading-dark">
+                        <h3 class="item-heading">CATEGORIES</h3>
+                    </div>
+                    <div class="widget-categories">
+                        <ul>
+                            <li>
+                                <a href="#">BreakFast
+                                    <span>25</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Lunch
+                                    <span>15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Pasta
+                                    <span>22</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Dinner
+                                    <span>18</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Dessert
+                                    <span>36</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Drinks
+                                    <span>12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Fruits
+                                    <span>05</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="section-heading heading-dark">
+                        <h3 class="item-heading">TOP PRODUCTS</h3>
+                    </div>
+                    <div class="widget-top-product">
+                        <ul class="block-list">
+                            <li class="single-item">
+                                <div class="item-img">
+                                    <a href="single-shop.html" class="item-icon"><i class="flaticon-plus-1"></i></a>
+                                    <img src="img/product/top-product1.jpg" alt="Post">
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="item-title"><a href="#">Kitchen Product</a></h4>
+                                    <div class="item-price"><span class="item-currency">$</span>15.00</div>
+                                </div>
+                            </li>
+                            <li class="single-item">
+                                <div class="item-img">
+                                    <a href="single-shop.html" class="item-icon"><i class="flaticon-plus-1"></i></a>
+                                    <img src="img/product/top-product2.jpg" alt="Post">
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="item-title"><a href="#">Kitchen Product</a></h4>
+                                    <div class="item-price"><span class="item-currency">$</span>25.00</div>
+                                </div>
+                            </li>
+                            <li class="single-item">
+                                <div class="item-img">
+                                    <a href="single-shop.html" class="item-icon"><i class="flaticon-plus-1"></i></a>
+                                    <img src="img/product/top-product3.jpg" alt="Post">
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="item-title"><a href="#">Kitchen Product</a></h4>
+                                    <div class="item-price"><span class="item-currency">$</span>29.00</div>
+                                </div>
+                            </li>
+                            <li class="single-item">
+                                <div class="item-img">
+                                    <a href="single-shop.html" class="item-icon"><i class="flaticon-plus-1"></i></a>
+                                    <img src="img/product/top-product4.jpg" alt="Post">
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="item-title"><a href="#">Kitchen Product</a></h4>
+                                    <div class="item-price"><span class="item-currency">$</span>10.00</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="widget-ad">
+                        <a href="#"><img src="img/figure/figure5.jpg" alt="Ad" class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
