@@ -285,3 +285,10 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }

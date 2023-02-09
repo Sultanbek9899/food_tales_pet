@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
     <!-- Modernizr Js -->
     <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
 </head>
@@ -145,7 +147,7 @@
                                                 </div>
                                                 <div class="cart-item">
                                                     <div class="cart-btn">
-                                                        <a href="#" class="item-btn">View Cart</a>
+                                                        <a href="{% url 'cart_page' %}" class="item-btn">Перейти в корзину</a>
                                                         <a href="#" class="item-btn">Checkout</a>
                                                     </div>
                                                 </div>
@@ -163,6 +165,7 @@
                                         </a> -->
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{% url 'author_posts' %}">Мои посты</a>
+                                            <a class="dropdown-item" href="{% url 'my_orders'%}"> Мои заказы </a>
                                             <a class="dropdown-item" href="#">Профиль</a>
                                             <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
                                           </div>
@@ -238,66 +241,34 @@
                                         <div class="cart-wrap d-none d-lg-block">                                            
                                             <div class="cart-info">
                                                 <i class="flaticon-shopping-bag"></i>
-                                                <div class="cart-amount"><span class="item-currency">$</span>00</div>     
+                                                <div class="cart-amount">{{cart.get_total_price}}<span class="item-currency">сом</span></div>     
                                             </div>                                   
-                                            <div class="cart-items">
+                                            <div class="cart-items " >
+                                                
+                                                {% for item in cart %}
                                                 <div class="cart-item">
                                                     <div class="cart-img">
                                                         <a href="#">
-                                                            <img src="img/product/top-product1.jpg" alt="product" class="img-fluid">
+                                                            <img src="{{ item.product.main_image.url }}" alt="product" class="img-fluid">
                                                         </a>
                                                     </div>
                                                     <div class="cart-title">
-                                                        <a href="#">Pressure</a>
-                                                        <span>Code: STPT601</span>
+                                                        <a href="#" style="font-size: 15px;">{{ item.product.name }}</a>
+                                                        <span>Артикул: {{ item.product.id }}</span>
                                                     </div>
-                                                    <div class="cart-quantity">X 1</div>
-                                                    <div class="cart-price">$249</div>
+                                                    <div class="cart-quantity">X {{item.quantity}}</div>
+                                                    <div class="cart-price">{{item.total_price}} сом</div>
                                                     <div class="cart-trash">
-                                                        <a href="#">
+                                                        <a href="{% url 'delete_cart' item.product.id %}">
                                                             <i class="far fa-trash-alt"></i>
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#">
-                                                            <img src="img/product/top-product2.jpg" alt="product" class="img-fluid">
-                                                        </a>
-                                                    </div>
-                                                    <div class="cart-title">
-                                                        <a href="#">Stethoscope</a>
-                                                        <span>Code: STPT602</span>
-                                                    </div>
-                                                    <div class="cart-quantity">X 1</div>
-                                                    <div class="cart-price">$189</div>
-                                                    <div class="cart-trash">
-                                                        <a href="#">
-                                                            <i class="far fa-trash-alt"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#">
-                                                            <img src="img/product/top-product3.jpg" alt="product" class="img-fluid">
-                                                        </a>
-                                                    </div>
-                                                    <div class="cart-title">
-                                                        <a href="#">Microscope</a>
-                                                        <span>Code: STPT603</span>
-                                                    </div>
-                                                    <div class="cart-quantity">X 2</div>
-                                                    <div class="cart-price">$379</div>
-                                                    <div class="cart-trash">
-                                                        <a href="#">
-                                                            <i class="far fa-trash-alt"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                                {% endfor %}
+
                                                 <div class="cart-item">
                                                     <div class="cart-btn">
-                                                        <a href="#" class="item-btn">View Cart</a>
+                                                        <a href="{% url 'cart_page' %}" class="item-btn">Перейти в корзину</a>
                                                         <a href="#" class="item-btn">Checkout</a>
                                                     </div>
                                                 </div>
@@ -430,7 +401,13 @@
     <!-- Custom Js -->
     <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
-<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    {% block javascript %}
+
+    {% endblock %}
+
 </body>
 
 

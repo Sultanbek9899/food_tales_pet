@@ -41,10 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'ckeditor',
+    'rest_framework',
+    'drf_yasg',
+    'rest_framework_simplejwt',
+
     #apps
     'apps.blog',
     'apps.accounts',
     'apps.shop',
+    'apps.cart',
+    'apps.order',
+    'apps.api',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.cart.cart_context.get_cart',
             ],
         },
     },
@@ -83,10 +91,20 @@ AUTH_USER_MODEL = 'accounts.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'foodtales_db',
+        'USER': 'food_user',
+        'PASSWORD': 'qwerty123',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -209,4 +227,17 @@ CKEDITOR_CONFIGS = {
             'elementspath'
         ]),
     }
+}
+
+
+CART_SESSION_ID = 'cart'
+
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+  
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+   
 }

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#Номер заказа</th>
+        <th scope="col">Адрес</th>
+        <th scope="col">Мобильный телефон </th>
+        <th scope="col">Дата создания</th>
+        <th scope="col"> Дата обновление</th>
+        <th scope="col">Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+      <tr class="{% if order.status == 'new' %} table-success{% endif %}">
+        <th scope="row">{{order.id}}</th>
+        <td>{{order.address}}</td>
+        <td>{{order.mobile}}</td>
+        <td>{{order.created }}</td>
+        <td>{{ order.updated}}</td>
+        <td> {{ order.get_status_display}}</td>
+      </tr>
+      {% endfor %}
+   
+    </tbody>
+  </table>
+
+{% endblock %}

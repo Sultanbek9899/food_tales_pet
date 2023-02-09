@@ -33,7 +33,7 @@
                                 </div>
                                 <ul class="action-items">
                                     <li>
-                                        <a href="#">
+                                        <a href="{% url 'add_cart' product.id %}" class="add_cart">
                                             <i class="fas fa-shopping-cart"></i>
                                         </a>
                                     </li>
@@ -190,5 +190,22 @@
         </div>
     </div>
 </section>
+
+{% endblock %}
+
+
+
+{% block javascript %}
+
+
+
+{% if messages %}
+    <script>    
+        toastr.options.closeButton=true;
+        toastr.success("Ваш товар добавлен в корзину!")
+    </script>
+{% endif %}
+
+   
 
 {% endblock %}
