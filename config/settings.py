@@ -92,11 +92,11 @@ AUTH_USER_MODEL = 'accounts.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'foodtales_db',
-        'USER': 'food_user',
-        'PASSWORD': 'qwerty123',
+        'NAME': os.getenv('POSTGRES_DB', default="foodtales_db"),
+        'USER': os.getenv("POSTGRES_USER", default="food_user"),
+        'PASSWORD': os.getenv("POSTGRES_PASSWORD", default="qwerty123"),
         'HOST': 'localhost',
-        'PORT': 5432,
+        'PORT': os.getenv("POSTGRES_PORT", default=5432),
     }
 }
 # DATABASES = {
